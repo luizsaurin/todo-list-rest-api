@@ -3,10 +3,17 @@ import { create, findAll, findById, remove, update } from './controller/todoCont
 
 const router = Router()
 
-router.post('/', create)
-router.get('/', findAll)
-router.get('/:id', findById)
-router.patch('/:id', update)
-router.delete('/:id', remove)
+const createRoute = (path: string): Router => {
+	const newRouter = Router()
+	router.use(path, newRouter)
+	return newRouter
+}
+
+const todoRouter = createRoute('/todo')
+todoRouter.post('/', create)
+todoRouter.get('/', findAll)
+todoRouter.get('/:id', findById)
+todoRouter.patch('/:id', update)
+todoRouter.delete('/:id', remove)
 
 export default router

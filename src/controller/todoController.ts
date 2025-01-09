@@ -5,12 +5,7 @@ const todoList: Todo[] = []
 const todoListMaxLength: number = 100
 
 // Add dummy data
-todoList.push(new Todo(Math.floor((Math.random() * todoListMaxLength) + 1).toString(), 'Complete the project report'))
-todoList.push(new Todo(Math.floor((Math.random() * todoListMaxLength) + 1).toString(), 'Respond to work emails'))
-todoList.push(new Todo(Math.floor((Math.random() * todoListMaxLength) + 1).toString(), 'Attend team meeting at 3 PM'))
-todoList.push(new Todo(Math.floor((Math.random() * todoListMaxLength) + 1).toString(), 'Finish code review for the new feature'))
-todoList.push(new Todo(Math.floor((Math.random() * todoListMaxLength) + 1).toString(), 'Study for the upcoming exam'))
-todoList.push(new Todo(Math.floor((Math.random() * todoListMaxLength) + 1).toString(), 'Write blog post on TypeScript best practices'))
+todoList.push(new Todo('1', 'Example todo item'))
 
 export const create: RequestHandler = (req, res, next) => {
 	const description = req.body.description
