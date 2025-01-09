@@ -1,12 +1,12 @@
 import { json } from 'body-parser'
 import express, { NextFunction, Request, Response } from 'express'
-import todoRoutes from './routes/todos'
+import todoRoutes from './routes'
 
 const app = express()
 
 app.use(json())
 
-app.use('/todos', todoRoutes)
+app.use('/todo', todoRoutes)
 
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 	res.status(500).json({ message: err.message })
