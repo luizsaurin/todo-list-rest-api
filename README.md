@@ -28,5 +28,3 @@ npm start
 ```
 
 Use an HTTP Client to run the requests
-
-(add requests)
